@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.category{
+    background-color: whitesmoke;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.tweet{
+    font-weight: normal;
+    background-color: #fff;
+    margin: 1rem;
+    padding: 1rem;
+}

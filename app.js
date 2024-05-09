@@ -1,9 +1,8 @@
-// async function getJson() {}
+// async function getJson() {} YAPMAYI UNUTMA
 
 fetch("data.json")
   .then((response) => response.json())
   .then((data) => {
-    // Get the categories array from the JSON data
     const categories = data.categories;
     const tweets = data.tweets;
     const users = data.users;
@@ -21,16 +20,25 @@ fetch("data.json")
           currentUser = users.find((user) => user.id === tweet.userId);
 
           const tweetdiv = document.createElement("div");
+
+          const img = document.createElement("img");
+          img.src = currentUser.userPhoto;
+          tweetdiv.appendChild(img);
           tweetdiv.textContent =
-            "User:@" + currentUser.userName + " post:" + tweet.id;
+            currentUser.userName +
+            " " +
+            currentUser.name +
+            " " +
+            currentUser.userName +
+            " " +
+            tweet.textContent;
+          tweetdiv.appendChild(img);
+          tweetdiv.classList.add("tweet");
           categorydiv.appendChild(tweetdiv);
         }
       });
 
-      // Append the newly created div to the container
+      categorydiv.classList.add("category");
       container.appendChild(categorydiv);
     });
   });
-// const div = document.createElement("div");
-// div.innerHTML = element.categoryName;
-// div.appendChild(div);
